@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <title>{$shop_name}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="bootstrap/js/html5shiv.min.js"></script>
+      <script src="bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/jquery-migrate.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="container">
+      <div id="shop_head">
+        <a href="index.php">
+          <img src="images/title.jpg" alt="{$shop_name}" class="img-responsive">
+        </a>
+        <div class="row">
+          <a href="http://www.tw-kawasaki.com/about.php"><div class="col" style="background-color:black;"><h2>品牌介紹</h2></div></a>
+           <a href="http://www.tw-kawasaki.com/news_list.php"><div class="col" style="background-color:black;"><h2>NEWS & EVENTS</h2></div></a>
+           <a href="http://www.tw-kawasaki.com/store.php"><div class="col" style="background-color:black;"><h2>經銷據點</h2></div></a>
+          </div>f
+      </div>
+
+      <div id="shop_main" class="row" >
+        <div class="col-md-9 col-sm-8">
+          {if isset($msg)}
+            <div class="btn btn-outline-secondary">{$msg}</div>
+          {/if}
+          {if $op=="goods_form"}
+            {include file="goods_form.html"}
+          {elseif $op=="goods_display"}
+            {include file='goods_display.html'}
+          {elseif $op=="user_form"}
+            {include file='user_form.html'}
+          {elseif $op=="display_user"}
+            {include file='display_user.html'}
+          {elseif $op=="check_out"}
+            {include file='bill_check_out.html'}
+          {elseif $op=="display_bill"}
+            {include file='display_bill.html'}
+          {elseif $op=="list_bill"}
+            {include file='list_bill.html'}
+          {else}
+            {include file='goods_list.html'}
+          {/if}
+        </div>
+        <div class="col-md-3 col-sm-4">
+          {include file='index_side.html'}
+        </div>
+      </div>
+
+      <div id="shop_foot" style="background-color:black">
+        <div><h2>Kawasaki 台崎重車</h2></div>
+        <div>總經銷：台崎重車股份有限公司   新北市中和區橋和路102號</div>
+        <div>電話：(06)2345678</div>
+        <div>2018 Kawasaki Motors Taiwan . All rights reserved.</div>
+      </div>
+    </div>
+  </body>
+</html>
